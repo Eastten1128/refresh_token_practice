@@ -1,6 +1,6 @@
 package com.example.jdr.notice.entity;
 
-public enum ENUM {
+public enum Role {
     ADMIN,
     USER
 }

@@ -1,5 +1,6 @@
 package com.example.jdr.notice.entity;
 
+import com.example.jdr.notice.global.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -18,5 +19,9 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private Role role;
 
 }

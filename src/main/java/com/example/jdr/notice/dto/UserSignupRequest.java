@@ -2,7 +2,8 @@ package com.example.jdr.notice.dto;
 
 import jakarta.validation.constraints.NotNull;
 
-public class UserRequest {
+
+public class UserSignupRequest {
 
     @NotNull
     private String username;

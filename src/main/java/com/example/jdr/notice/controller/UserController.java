@@ -1,5 +1,6 @@
 package com.example.jdr.notice.controller;
 
+import com.example.jdr.notice.auth.dto.LoginResponse;
 import com.example.jdr.notice.dto.UserLoginRequest;
 import com.example.jdr.notice.dto.UserResponse;
 import com.example.jdr.notice.dto.UserSignupRequest;
@@ -30,7 +31,7 @@ public class UserController {
     }
     //로그인
     @PostMapping("/login")
-    public UserResponse login(@Valid @RequestBody UserLoginRequest request){
+    public LoginResponse login(@Valid @RequestBody UserLoginRequest request){
         return userService.login(request);
     }
 

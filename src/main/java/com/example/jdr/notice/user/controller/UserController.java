@@ -1,0 +1,42 @@
+package com.example.jdr.notice.user.controller;
+
+import com.example.jdr.notice.auth.dto.LoginResponse;
+import com.example.jdr.notice.user.dto.UserLoginRequest;
+import com.example.jdr.notice.user.dto.UserResponse;
+import com.example.jdr.notice.user.dto.UserSignupRequest;
+import com.example.jdr.notice.user.service.UserService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/users")
+public class UserController {
+
+    @Autowired
+    private final UserService userService;
+
+    public UserController(UserService userService)
+    {
+        this.userService = userService;
+    }
+
+
+    //회원가입
+    @PostMapping("/signup")
+    public UserResponse signup(@Valid @RequestBody UserSignupRequest request){
+        return userService.signup(request);
+
+    }
+    //로그인
+    @PostMapping("/login")
+    public LoginResponse login(@Valid @RequestBody UserLoginRequest request){
+        return userService.login(request);
+    }
+
+    //유저 조회
+    @GetMapping("/{userId}")
+    public UserResponse getUserName(@PathVariable("userId") Long userId){
+        return userService.findById(userId);
+    }
+}

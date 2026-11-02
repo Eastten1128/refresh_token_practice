@@ -1,6 +1,6 @@
 package com.example.jdr.notice.auth.dto;
 
-import com.example.jdr.notice.entity.Role;
+import com.example.jdr.notice.user.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
